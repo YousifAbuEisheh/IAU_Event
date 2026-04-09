@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معرض قسم تطوير الذات 2026 - جامعة الإمام عبدالرحمن بن فيصل</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #14b8a6;
+    --cyan: #06b6d4;
+    --navy: #1e3a8a;
+    --navy-light: #2d55c7;
+    --white: #ffffff;
+    --off-white: #f0f9ff;
+    --gray-50: #f8fafc;
+    --gray-100: #e2f4f8;
+    --gray-300: #94a3b8;
+    --gray-600: #475569;
+    --gray-800: #1e293b;
+    --font-display: 'Cairo', 'Tajawal', sans-serif;
+    --font-body: 'Tajawal', 'Cairo', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--gray-800);
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #ffffff 0%, #f0f9ff 40%, #e0f7fa 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 60px 24px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%);
+    top: -100px; left: -150px; pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(20,184,166,0.1) 0%, transparent 70%);
+    bottom: -80px; right: -100px; pointer-events: none;
+  }
+  .deco-cross {
+    position: absolute; opacity: 0.06; font-size: 80px;
+    color: var(--navy); pointer-events: none;
+    animation: floatY 6s ease-in-out infinite;
+  }
+  .deco-cross:nth-child(1) { top: 10%; right: 8%; font-size: 60px; animation-delay: 0s; }
+  .deco-cross:nth-child(2) { top: 25%; left: 6%; font-size: 100px; animation-delay: 2s; }
+  .deco-cross:nth-child(3) { bottom: 20%; right: 12%; font-size: 50px; animation-delay: 4s; }
+  .deco-cross:nth-child(4) { bottom: 30%; left: 10%; font-size: 70px; animation-delay: 1s; }
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-14px); }
+  }
+
+  /* Logo */
+  .logo-wrap { width: 100%; display: flex; justify-content: center; margin-bottom: 36px; animation: fadeDown 0.8s ease both; }
+  .logo-badge { display: flex; flex-direction: column; align-items: center; }
+  .logo-img {
+    width: 250px; height: auto;
+    filter: drop-shadow(0 4px 16px rgba(30,58,138,0.10));
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-body); font-size: 13px; font-weight: 500;
+    letter-spacing: 0.18em; color: var(--teal); text-transform: uppercase;
+    margin-bottom: 14px; animation: fadeDown 0.8s 0.15s ease both;
+  }
+  .hero-title {
+    font-family: var(--font-display); font-size: clamp(32px, 6vw, 60px);
+    font-weight: 900; color: var(--navy); text-align: center;
+    line-height: 1.25; margin-bottom: 16px; animation: fadeDown 0.8s 0.25s ease both;
+  }
+  .hero-title .accent { color: var(--teal); }
+  .hero-sub {
+    font-size: clamp(15px, 2.5vw, 18px); color: var(--gray-600);
+    text-align: center; max-width: 560px; line-height: 1.9; margin-bottom: 50px;
+    font-weight: 400; animation: fadeDown 0.8s 0.35s ease both;
+  }
+  .hero-sub strong { color: var(--navy); font-weight: 700; }
+
+  /* Countdown */
+  .countdown-wrap { animation: fadeDown 0.8s 0.45s ease both; width: 100%; max-width: 700px; }
+  .countdown-label {
+    text-align: center; font-size: 13px; font-weight: 600;
+    color: var(--gray-300); letter-spacing: 0.1em; margin-bottom: 20px; text-transform: uppercase;
+  }
+  .countdown-grid { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .cd-card {
+    background: var(--white); border: 1.5px solid rgba(20,184,166,0.18);
+    border-radius: 20px; padding: 22px 18px 16px;
+    min-width: 120px; flex: 1; max-width: 150px; text-align: center;
+    box-shadow: 0 4px 24px rgba(30,58,138,0.07), 0 1px 4px rgba(0,0,0,0.04);
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cd-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,138,0.12); }
+  .cd-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--cyan));
+  }
+  .cd-num {
+    font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    line-height: 1; display: block; font-feature-settings: "tnum";
+  }
+  .cd-unit { font-size: 13px; font-weight: 600; color: var(--teal); margin-top: 8px; display: block; letter-spacing: 0.04em; }
+  .cd-sep {
+    font-family: var(--font-display); font-size: 40px; font-weight: 900;
+    color: var(--gray-100); display: flex; align-items: center; padding-top: 8px; user-select: none;
+  }
+
+  .date-badge {
+    margin-top: 32px; display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(90deg, var(--navy), var(--navy-light));
+    color: white; border-radius: 50px; padding: 10px 24px;
+    font-family: var(--font-display); font-weight: 600; font-size: 15px;
+    box-shadow: 0 4px 20px rgba(30,58,138,0.25);
+    animation: fadeDown 0.8s 0.55s ease both;
+  }
+  .date-badge .dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+
+  /* ── ABOUT ── */
+  .section { padding: 90px 24px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(20,184,166,0.08); color: var(--teal); border-radius: 50px;
+    padding: 6px 16px; font-size: 13px; font-weight: 700; margin-bottom: 18px; letter-spacing: 0.05em;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(26px, 4vw, 40px);
+    font-weight: 900; color: var(--navy); margin-bottom: 20px; line-height: 1.3;
+  }
+  .section-desc { font-size: 17px; color: var(--gray-600); line-height: 2; max-width: 740px; font-weight: 400; }
+
+  .details-bg { background: var(--gray-50); }
+  .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
+  .info-card {
+    background: var(--white); border-radius: 20px; padding: 28px;
+    border: 1px solid rgba(20,184,166,0.12);
+    box-shadow: 0 2px 16px rgba(30,58,138,0.06);
+    display: flex; gap: 18px; align-items: flex-start;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .info-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(30,58,138,0.12); }
+  .info-icon {
+    width: 52px; height: 52px; min-width: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(20,184,166,0.12), rgba(6,182,212,0.12));
+    display: flex; align-items: center; justify-content: center; font-size: 24px;
+  }
+  .info-label { font-size: 12px; font-weight: 700; color: var(--gray-300); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .info-value { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .info-sub { font-size: 13px; color: var(--gray-300); margin-top: 4px; font-weight: 400; }
+
+  /* ── GALLERY — Pavilions ── */
+  .pavilions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 48px;
+  }
+  .pavilion-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 28px 22px;
+    border: 1.5px solid rgba(20,184,166,0.13);
+    box-shadow: 0 2px 14px rgba(30,58,138,0.07);
+    display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+    position: relative; overflow: hidden;
+  }
+  .pavilion-card::before {
+    content: ''; position: absolute; top: 0; right: 0; left: 0; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--cyan));
+    transform: scaleX(0); transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  .pavilion-card:hover::before { transform: scaleX(1); }
+  .pavilion-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(30,58,138,0.13); border-color: rgba(20,184,166,0.3); }
+  .pv-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(20,184,166,0.12), rgba(6,182,212,0.14));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .pv-title { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+  .pv-desc { font-size: 13px; color: var(--gray-600); line-height: 1.8; font-weight: 400; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.7);
+    text-align: center; padding: 40px 24px; font-size: 14px; line-height: 2;
+  }
+  footer strong { color: white; }
+  .footer-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, var(--teal), var(--cyan));
+    margin: 0 auto 20px; border-radius: 2px;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .divider-line {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(20,184,166,0.3), transparent);
+  }
+
+  @media (max-width: 768px) {
+    .details-grid { grid-template-columns: 1fr; }
+    .pavilions-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .pavilions-grid { grid-template-columns: 1fr; }
+    .cd-card { min-width: 70px; max-width: 80px; padding: 16px 8px 12px; }
+    .cd-sep { display: none; }
+    .countdown-grid { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <span class="deco-cross">✚</span>
+  <span class="deco-cross">✚</span>
+  <span class="deco-cross">✚</span>
+  <span class="deco-cross">✚</span>
+
+  <div class="logo-wrap">
+    <div class="logo-badge">
+      <img class="logo-img" src="IAU_Logo.2.jpg" alt="شعار جامعة الإمام عبدالرحمن بن فيصل">
+    </div>
+  </div>
+
+  <p class="hero-eyebrow">١٩ مايو ٢٠٢٦ · الدمام، المملكة العربية السعودية</p>
+  <h1 class="hero-title">معرض قسم <span class="accent">تطوير الذات</span></h1>
+
+  <p class="hero-sub">
+    هل أنت مستعد؟ 🎯<br>
+    في <strong>يوم واحد</strong> ستشهد إبداع طلاب جامعة الإمام عبدالرحمن بن فيصل — من <strong>البحث العلمي</strong> إلى <strong>مهارات الحياة</strong>، من <strong>الرسم الهندسي</strong> إلى <strong>المسؤولية المجتمعية</strong>. مبادرات حقيقية، أثر ملموس، وجيل يبني مستقبله بيديه. 🌱
+  </p>
+
+  <div class="countdown-wrap">
+    <div class="countdown-label">العدّ التنازلي حتى انطلاق المعرض</div>
+    <div class="countdown-grid">
+      <div class="cd-card">
+        <span class="cd-num" id="cd-days">00</span>
+        <span class="cd-unit">أيام</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-card">
+        <span class="cd-num" id="cd-hours">00</span>
+        <span class="cd-unit">ساعات</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-card">
+        <span class="cd-num" id="cd-mins">00</span>
+        <span class="cd-unit">دقائق</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-card">
+        <span class="cd-num" id="cd-secs">00</span>
+        <span class="cd-unit">ثواني</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="date-badge">
+    <span class="dot"></span>
+    الثلاثاء، ١٩ مايو ٢٠٢٦ · الساعة ١٢:٠٠ ظهراً
+  </div>
+</section>
+
+<div class="divider-line"></div>
+
+<section class="section details-bg">
+  <div class="section-inner">
+    <div class="section-tag">✦ &nbsp;تفاصيل الفعالية</div>
+    <h2 class="section-title">موعدنا يوم الثلاثاء!</h2>
+    <p class="section-desc">
+      معرض قسم تطوير الذات يُسلّط الضوء على إنجازات طلاب جامعة الإمام في أبرز مجالات النمو الأكاديمي والشخصي والمجتمعي. تعالَ واكتشف، وتفاعل، وكن جزءاً من التجربة.
+    </p>
+    <div class="details-grid">
+      <div class="info-card">
+        <div class="info-icon">📅</div>
+        <div>
+          <div class="info-label">التاريخ</div>
+          <div class="info-value">الثلاثاء، ١٩ مايو ٢٠٢٦</div>
+          <div class="info-sub">٢١ ذو القعدة ١٤٤٧هـ</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🕛</div>
+        <div>
+          <div class="info-label">الوقت</div>
+          <div class="info-value">١٢:٠٠ ظهراً</div>
+          <div class="info-sub">حتى انتهاء الفعاليات</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">الموقع</div>
+          <div class="info-value">جامعة الإمام عبدالرحمن بن فيصل</div>
+          <div class="info-sub">الدمام، المملكة العربية السعودية</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎯</div>
+        <div>
+          <div class="info-label">الفئة المستهدفة</div>
+          <div class="info-value">طلاب وأعضاء هيئة التدريس</div>
+          <div class="info-sub">مفتوح لجميع منسوبي الجامعة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-line"></div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">🏛 &nbsp;أركان المعرض</div>
+    <h2 class="section-title">اكتشف إنجازات قسم تطوير الذات</h2>
+    <p class="section-desc">
+      عشرة أركان متنوعة تعكس روح الإبداع والمسؤولية لدى طلاب الجامعة — من القاعة إلى المجتمع.
+    </p>
+
+    <div class="pavilions-grid">
+      <div class="pavilion-card">
+        <div class="pv-icon">🔬</div>
+        <div class="pv-title">البحث العلمي</div>
+        <div class="pv-desc">مشاريع بحثية أعدها الطلاب تُسهم في حل مشكلات حقيقية وتُثري المعرفة الأكاديمية.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">🎓</div>
+        <div class="pv-title">مهارات الحياة الجامعية</div>
+        <div class="pv-desc">عرض لأبرز مخرجات مقرر "مهارات الحياة الجامعية" الذي يُجهّز الطالب لرحلته الأكاديمية والمهنية.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">🤝</div>
+        <div class="pv-title">المشروعات التطوعية</div>
+        <div class="pv-desc">مبادرات تطوعية نفّذها طلاب الجامعة خدمةً للمجتمع المحلي بروح الإنسانية والعطاء.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">✏️</div>
+        <div class="pv-title">المرسم والرسم الهندسي</div>
+        <div class="pv-desc">معرض أعمال إبداعية وهندسية تُبرز الموهبة التصميمية والدقة الفنية لدى الطلاب.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">🎨</div>
+        <div class="pv-title">مقررات التصاميم</div>
+        <div class="pv-desc">نماذج تصميمية متنوعة تجمع بين الجماليات والوظيفية، نتاج مقررات التصميم المتخصصة.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">🌍</div>
+        <div class="pv-title">المسؤولية المجتمعية</div>
+        <div class="pv-desc">برامج ومشاريع تُجسّد دور الجامعة في خدمة المجتمع وتحقيق التنمية المستدامة.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">🩸</div>
+        <div class="pv-title">التبرع بالدم</div>
+        <div class="pv-desc">حملة توعوية تُشجّع على التبرع بالدم وإنقاذ الأرواح — قطرة دم قد تُغيّر حياة إنسان.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">🚦</div>
+        <div class="pv-title">السلامة المرورية</div>
+        <div class="pv-desc">توعية بقواعد السلامة على الطريق والحد من حوادث السير من خلال مبادرات طلابية مبتكرة.</div>
+      </div>
+      <div class="pavilion-card">
+        <div class="pv-icon">🚭</div>
+        <div class="pv-title">التوعية بأضرار التدخين والمخدرات</div>
+        <div class="pv-desc">ركن تثقيفي يُسلّط الضوء على مخاطر التدخين والمخدرات بأساليب تفاعلية وتوعوية.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-line"></div>
+
+<footer>
+  <div class="footer-divider"></div>
+  <strong>معرض قسم تطوير الذات — جامعة الإمام عبدالرحمن بن فيصل</strong><br>
+  الدمام، المملكة العربية السعودية · الثلاثاء ١٩ مايو ٢٠٢٦<br>
+  <span style="font-size:12px;opacity:0.5;margin-top:8px;display:block;">
+    © ١٤٤٧هـ / ٢٠٢٦م — جميع الحقوق محفوظة لجامعة الإمام عبدالرحمن بن فيصل
+  </span>
+</footer>
+
+<script>
+  // Countdown to Tuesday May 19, 2026 at 12:00 PM AST (UTC+3)
+  const target = new Date('2026-05-19T12:00:00+03:00').getTime();
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+      return;
+    }
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins  = Math.floor((diff % 3600000)  / 60000);
+    const secs  = Math.floor((diff % 60000)    / 1000);
+    const prevSecs = document.getElementById('cd-secs').textContent;
+    document.getElementById('cd-days').textContent  = pad(days);
+    document.getElementById('cd-hours').textContent = pad(hours);
+    document.getElementById('cd-mins').textContent  = pad(mins);
+    document.getElementById('cd-secs').textContent  = pad(secs);
+    if (prevSecs !== pad(secs)) {
+      const el = document.getElementById('cd-secs');
+      el.style.transform = 'scale(1.12)';
+      el.style.transition = 'transform 0.15s ease';
+      setTimeout(() => { el.style.transform = 'scale(1)'; }, 150);
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
